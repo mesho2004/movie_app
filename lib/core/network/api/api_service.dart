@@ -5,6 +5,5 @@ class ApiService {
   static const recommended = '${baseUrl}movie/top_rated$apiKey';
   static const releases = '${baseUrl}movie/upcoming$apiKey';
 
-
   
 }
