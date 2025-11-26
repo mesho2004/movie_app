@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:movie_app/core/utils/app_colors.dart';
 import 'package:movie_app/feature/home/data/home_api.dart';
@@ -26,6 +27,13 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setSystemUIOverlayStyle(
+      SystemUiOverlayStyle(
+        statusBarColor: AppColors.backgroundColor, // match your screen
+        statusBarIconBrightness: Brightness.light, // white icons
+      ),
+    );
+
     return BlocProvider(
       create: (_) => TopRatedCubit(HomeApi())..loadTopRated(),
       child: Scaffold(
@@ -35,12 +43,18 @@ class _HomeScreenState extends State<HomeScreen> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
-                  "What do you want to watch?",
-                  style: TextStyle(
-                    color: AppColors.whiteColor,
-                    fontSize: 18,
-                    fontWeight: FontWeight.w600,
+                Padding(
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 16.0,
+                    vertical: 16.0,
+                  ),
+                  child: Text(
+                    "What do you want to watch?",
+                    style: TextStyle(
+                      color: AppColors.whiteColor,
+                      fontSize: 18,
+                      fontWeight: FontWeight.w600,
+                    ),
                   ),
                 ),
                 SizedBox(height: 20),
