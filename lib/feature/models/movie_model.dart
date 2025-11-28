@@ -48,5 +48,5 @@ class Movie {
     voteCount = json['vote_count'];
   }
 
-  
+  String get fullImageUrl => 'https://image.tmdb.org/t/p/w500$posterPath';
 }
