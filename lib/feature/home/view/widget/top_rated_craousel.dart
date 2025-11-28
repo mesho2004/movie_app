@@ -12,67 +12,64 @@ class TopRatedCarousel extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       height: 240,
-      child: GestureDetector(
-        onTap: ()=>Navigator.of(context).pushNamed("DetailsScreen"),
-        child: ListView.separated(
-          clipBehavior: Clip.none,
-          scrollDirection: Axis.horizontal,
-          padding: const EdgeInsets.symmetric(horizontal: 16),
-          itemBuilder: (context, index) {
-            final movie = movies[index];
-        
-            return SizedBox(
-              width: 160,
-              height: 240,
-              child: Stack(
-                clipBehavior: Clip.none,
-                children: [
-                  ClipRRect(
-                    borderRadius: BorderRadius.circular(16),
-                    child: CachedNetworkImage(
-                     imageUrl: movie.fullImageUrl,
-                      height: 240,
-                      width: 160,
-                      fit: BoxFit.cover,
-                    ),
+      child: ListView.separated(
+        clipBehavior: Clip.none,
+        scrollDirection: Axis.horizontal,
+        padding: const EdgeInsets.symmetric(horizontal: 16),
+        itemBuilder: (context, index) {
+          final movie = movies[index];
+
+          return SizedBox(
+            width: 160,
+            height: 240,
+            child: Stack(
+              clipBehavior: Clip.none,
+              children: [
+                ClipRRect(
+                  borderRadius: BorderRadius.circular(16),
+                  child: CachedNetworkImage(
+                   imageUrl: movie.fullImageUrl,
+                    height: 240,
+                    width: 160,
+                    fit: BoxFit.cover,
                   ),
-                  Positioned(
-                    bottom: -50,
-                    left: -12,
-                    child: Stack(
-                      children: [
-                        // Stroke text
-                        Text(
-                          "${index + 1}",
-                          style: TextStyle(
-                            fontSize: 90,
-                            fontWeight: FontWeight.bold,
-                            foreground: Paint()
-                              ..style = PaintingStyle.stroke
-                              ..strokeWidth = 6
-                              ..color = AppColors.blueColor,
-                          ),
+                ),
+                Positioned(
+                  bottom: -50,
+                  left: -12,
+                  child: Stack(
+                    children: [
+                      // Stroke text
+                      Text(
+                        "${index + 1}",
+                        style: TextStyle(
+                          fontSize: 90,
+                          fontWeight: FontWeight.bold,
+                          foreground: Paint()
+                            ..style = PaintingStyle.stroke
+                            ..strokeWidth = 6
+                            ..color = AppColors.blueColor,
                         ),
-        
-                        // Fill text
-                        Text(
-                          "${index + 1}",
-                          style: TextStyle(
-                            fontSize: 90,
-                            fontWeight: FontWeight.bold,
-                            color: AppColors.backgroundColor,
-                          ),
+                      ),
+
+                      // Fill text
+                      Text(
+                        "${index + 1}",
+                        style: TextStyle(
+                          fontSize: 90,
+                          fontWeight: FontWeight.bold,
+                          color: AppColors.backgroundColor,
                         ),
-                      ],
-                    ),
+                      ),
+                    ],
                   ),
-                ],
-              ),
-            );
-          },
-          separatorBuilder: (_, __) => const SizedBox(width: 16),
-          itemCount: 10,
-        ),
+                ),
+              ],
+            ),
+          );
+        },
+        separatorBuilder: (_, __) => const SizedBox(width: 16),
+        itemCount: 10,
       ),
     );
   }

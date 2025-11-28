@@ -9,6 +9,8 @@ class AppImages {
   static const String starIcon = 'assets/icons/Star.svg';
   static const String clockIcon = 'assets/icons/Clock.svg';
   static const String ticketIcon = 'assets/icons/Ticket.svg';
-
-
+  static const String spiderMan = 'assets/images/spider man1.png';
+  static const String spiderMan2 = 'assets/images/spider man2.png';
+  static const String movieImage = 'assets/images/movie.png';
+  static const String arrowBackIcon = 'assets/icons/arrow_back.svg';
 }

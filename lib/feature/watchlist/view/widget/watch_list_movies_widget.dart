@@ -3,11 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:movie_app/core/utils/app_colors.dart';
 import 'package:movie_app/core/utils/app_images.dart';
-import 'package:movie_app/feature/models/movie_model.dart';
 
 class WatchListMoviesWidget extends StatelessWidget {
-  const WatchListMoviesWidget({super.key, required this.movie});
-  final Movie movie;
+  const WatchListMoviesWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -21,10 +19,11 @@ class WatchListMoviesWidget extends StatelessWidget {
               children: [
                 ClipRRect(
                   borderRadius: BorderRadius.circular(16),
-                  child: CachedNetworkImage(
+                  child: Image.network(
+                    'https://plus.unsplash.com/premium_photo-1664695368767-c42483a0bda1?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8dHJhaWxlcnxlbnwwfHwwfHx8MA%3D%3D',
                     height: 140,
                     width: 115,
-                    fit: BoxFit.cover, imageUrl: movie.fullImageUrl,
+                    fit: BoxFit.cover,
                   ),
                 ),
                 SizedBox(width: 12),
@@ -33,7 +32,7 @@ class WatchListMoviesWidget extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      movie.title??"",
+                      "Movie Title",
                       style: TextStyle(
                         fontSize: 16,
                         fontWeight: FontWeight.normal,
@@ -44,19 +43,19 @@ class WatchListMoviesWidget extends StatelessWidget {
                     WatchListMovieDetailRow(
                       image: AppImages.starIcon,
                       color: AppColors.ratingColor,
-                      text:movie.voteAverage.toString(),
+                      text: "4.5",
                     ),
                     WatchListMovieDetailRow(
                       image: AppImages.ticketIcon,
-                      text: movie.popularity.toString(),
+                      text: "4.5",
                     ),
                     WatchListMovieDetailRow(
                       image: AppImages.calendarIcon,
-                      text: movie.releaseDate??"",
+                      text: "4.5",
                     ),
                     WatchListMovieDetailRow(
                       image: AppImages.clockIcon,
-                      text: "1h 30m",
+                      text: "4.5",
                     ),
                   ],
                 ),

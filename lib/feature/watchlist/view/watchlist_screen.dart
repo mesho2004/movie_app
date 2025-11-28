@@ -2,11 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:movie_app/core/utils/app_colors.dart';
 import 'package:movie_app/core/utils/app_images.dart';
+import 'package:movie_app/feature/watchlist/view/widget/watch_list_movies_widget.dart';
 import 'package:movie_app/feature/watchlist/view_model/watchlist_cubit.dart';
 import 'package:movie_app/feature/watchlist/view_model/watchlist_state.dart';
 
 class WatchListScreen extends StatefulWidget {
-  const WatchListScreen({super.key,});
+  const WatchListScreen({super.key});
 
   @override
   State<WatchListScreen> createState() => _WatchListScreenState();
@@ -59,7 +60,7 @@ Widget _emptyState() {
         style: TextStyle(
           fontSize: 12,
           fontWeight: FontWeight.normal,
-          // color: AppColors.subTextColor,
+          color: AppColors.subTextColor,
         ),
       ),
     ],

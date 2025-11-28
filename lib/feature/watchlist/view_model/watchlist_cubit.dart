@@ -2,8 +2,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:movie_app/feature/models/movie_model.dart';
 import 'package:movie_app/feature/watchlist/view_model/watchlist_state.dart';
 
-class WatchListCubit extends Cubit<WatchListState> {
-  WatchListCubit() : super(WatchListEmpty());
+class WatchlistCubit extends Cubit<WatchListState> {
+  WatchlistCubit() : super(WatchListEmpty());
 
   final List<Movie> _watchList = [];
 
