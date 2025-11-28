@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:movie_app/core/utils/app_colors.dart';
 import 'package:movie_app/feature/models/movie_model.dart';
@@ -26,8 +27,8 @@ class TopRatedCarousel extends StatelessWidget {
               children: [
                 ClipRRect(
                   borderRadius: BorderRadius.circular(16),
-                  child: Image.network(
-                    movie.fullImageUrl,
+                  child: CachedNetworkImage(
+                   imageUrl: movie.fullImageUrl,
                     height: 240,
                     width: 160,
                     fit: BoxFit.cover,

@@ -8,6 +8,5 @@ class AppColors {
   static const blueColor = Color(0xff0296E5);
   static const unselectedItemColor = Color(0xff67686D);
   static const ratingColor = Color(0xffFF8700);
-  static const blurColor = Color(0xff252836);
-  static const grayColor = Color(0xff92929D);
+  static const subTextColor = Color(0xff92929D);
 }
