@@ -5,6 +5,11 @@ class WatchlistScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return Scaffold(
+      appBar: AppBar(centerTitle: true, title: const Text('Watch list')),
+      body: const Center(
+        child: Text('Watchlist', style: TextStyle(color: Colors.white70)),
+      ),
+    );
   }
 }
