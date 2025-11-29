@@ -47,4 +47,9 @@ class Movie {
     voteAverage = json['vote_average'];
     voteCount = json['vote_count'];
   }
+ feature/serach
+
+
+  String get fullImageUrl => 'https://image.tmdb.org/t/p/w500$posterPath';
+ main
 }

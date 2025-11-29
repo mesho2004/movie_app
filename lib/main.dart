@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
+ feature/serach
 import 'package:movie_app/core/utils/app_colors.dart';
 import 'main_screen.dart';
+=======
+import 'package:movie_app/feature/details/view/details_screen.dart';
+ main
 
 void main() {
   runApp(const MyApp());
@@ -13,6 +17,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+ feature/serach
       title: 'Movie App',
       theme: ThemeData(
         scaffoldBackgroundColor: AppColors.backgroundColor,
@@ -37,6 +42,12 @@ class MyApp extends StatelessWidget {
       home: const MainScreen(),
 
       routes: {MainScreen.routeName: (context) => const MainScreen()},
+
+      initialRoute: DetailsScreen.routeName,
+      routes: {
+        DetailsScreen.routeName: (context) => DetailsScreen(movieId: 1419406),
+      },
+ main
     );
   }
 }

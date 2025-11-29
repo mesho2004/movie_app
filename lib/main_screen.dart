@@ -15,7 +15,7 @@ class MainScreen extends StatefulWidget {
 }
 
 class _AppSectionScreenState extends State<MainScreen> {
-  List<Widget> screens = [HomeScreen(), SearchScreen(), WatchlistScreen()];
+  List<Widget> screens = [HomeScreen(), SearchScreen(), WatchListScreen()];
   int _index = 0;
   @override
   Widget build(BuildContext context) {
